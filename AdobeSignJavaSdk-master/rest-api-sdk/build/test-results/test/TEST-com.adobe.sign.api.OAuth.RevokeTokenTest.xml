@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.adobe.sign.api.OAuth.RevokeTokenTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2017-05-17T09:50:34" hostname="huangqixuande-MacBook-Pro.local" time="0.001">
+  <properties/>
+  <testcase name="testInvalidToken" classname="com.adobe.sign.api.OAuth.RevokeTokenTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

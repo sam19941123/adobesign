@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.adobe.sign.api.Views.CreateViewAgreementAssetListApiTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2017-05-17T09:50:35" hostname="huangqixuande-MacBook-Pro.local" time="0.714">
+  <properties/>
+  <testcase name="testInvalidXApiUser" classname="com.adobe.sign.api.Views.CreateViewAgreementAssetListApiTest" time="0.001"/>
+  <testcase name="testCreateAgreementAssetListUrl" classname="com.adobe.sign.api.Views.CreateViewAgreementAssetListApiTest" time="0.712"/>
+  <testcase name="testNullAndEmptyAccessToken" classname="com.adobe.sign.api.Views.CreateViewAgreementAssetListApiTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
