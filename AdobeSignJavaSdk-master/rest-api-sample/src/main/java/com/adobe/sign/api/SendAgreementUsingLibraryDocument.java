@@ -15,6 +15,8 @@ package com.adobe.sign.api;
 
 import java.util.ArrayList;
 import java.util.List;
+import javax.ws.rs.core.MultivaluedMap;
+import com.sun.jersey.core.util.MultivaluedMapImpl;
 
 import com.adobe.sign.model.agreements.AgreementCreationResponse;
 import com.adobe.sign.model.agreements.AgreementInfo;
@@ -26,6 +28,11 @@ import com.adobe.sign.utils.ApiUtils;
 import com.adobe.sign.utils.ApiException;
 
 import java.io.*;
+import java.io.File;
+
+import com.adobe.sign.api.TransientDocumentsApi;
+import com.adobe.sign.model.transientDocuments.TransientDocumentResponse;
+
 
 
 
@@ -59,30 +66,30 @@ public class SendAgreementUsingLibraryDocument {
       throw e;
     }
   }
-  /*private void readmail() throws IOException {
-
-    FileReader fr = new FileReader("/Users/Yellow/Desktop/AdobeSignJavaSdk-master/rest-api-sample/mail.txt");
-    
-
-    BufferedReader br = new BufferedReader(fr);
-    try{
-      while (br.ready()) {
-        System.out.println(br.readLine());
-      }
-      fr.close();
-    }
-    catch(IOException e){
-
-    }
-  }
-*/
+  
   /**
    * Main work function. See the class comment for details.
    */
+  private final static TransientDocumentsApi transientDocumentsApi = new TransientDocumentsApi();
   private void run() throws ApiException, IOException {
     //Get the id of the first library document of the user.
+    
+
+
     String libraryDocumentId = LibraryDocumentUtils.getFirstLibraryDocumentId();
 
+
+
+    /*MultivaluedMap headers = new MultivaluedMapImpl();    
+    //Add headers    
+    headers.put("Access-Token", Constants.ACCESS_TOKEN);    
+    headers.put("x-api-user", Constants.X_API_USER);
+    
+    File uploadfile = new File("test.pdf");
+    TransientDocumentResponse  transientDocumentResponse = transientDocumentsApi.createTransientDocument(headers, "test.pdf", uploadfile.getAbsoluteFile(), "application/pdf");
+    String libraryDocumentId = transientDocumentResponse.getTransientDocumentId();
+    System.out.println("111111111"+libraryDocumentId);
+*/
     if(libraryDocumentId == null) {
       ApiUtils.logError(Errors.NO_LIBRARY_DOCUMENTS);
     }
@@ -115,7 +122,7 @@ public class SendAgreementUsingLibraryDocument {
                                                                                            libraryDocumentId,
                                                                                            AgreementUtils.DocumentIdentifierType.LIBRARY_DOCUMENT_ID,
                                                                                            ApiUtils.getAgreementName(Constants.AGREEMENT_NAME));
-
+      //System.out.println(Constants.AGREEMENT_NAME);
       //Get agreement info using the agreement id
       AgreementInfo agreementInfo = AgreementUtils.getAgreementInfo(agreementCreationResponse.getAgreementId());
 

@@ -49,7 +49,7 @@ public class ApiUtils {
   }
 
   public static String getAgreementName(String name) {
-    return name + String.valueOf(System.currentTimeMillis());
+    return name;// + String.valueOf(System.currentTimeMillis());
   }
 
   public static String getMegaSignName(String name) {

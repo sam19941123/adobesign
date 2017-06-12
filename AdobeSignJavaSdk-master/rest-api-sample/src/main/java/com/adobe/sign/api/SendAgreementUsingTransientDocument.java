@@ -26,6 +26,7 @@ import com.adobe.sign.utils.TransientDocumentUtils;
 import com.adobe.sign.utils.ApiUtils;
 import com.adobe.sign.utils.ApiException;
 
+import java.io.*;
 
 /**
  * This sample client demonstrates how to send a new agreement.
@@ -45,7 +46,7 @@ public class SendAgreementUsingTransientDocument {
   /**
    * Entry point for this sample client program.
    */
-  public static void main(String args[]) throws ApiException {
+  public static void main(String args[]) throws ApiException, IOException{
     ApiUtils.configureProperty(SendAgreementUsingTransientDocument.class.getName());
     try {
       SendAgreementUsingTransientDocument client = new SendAgreementUsingTransientDocument();
@@ -60,7 +61,7 @@ public class SendAgreementUsingTransientDocument {
   /**
    * Main work function. See the class comment for details.
    */
-  private void run() throws ApiException {
+  private void run() throws ApiException, IOException{
     //Create transient document.
     TransientDocumentResponse transientDocumentResponse = TransientDocumentUtils.createTransientDocument(Constants.REQUEST_PATH,
                                                                                                          Constants.INPUT_FILE_NAME);
@@ -70,8 +71,21 @@ public class SendAgreementUsingTransientDocument {
 
     //List containing email ids of recipients.
     List<String> recipientSetEmailList = new ArrayList<String>();
-    recipientSetEmailList.add(ApiUtils.getUserEmail(Constants.USER_EMAIL_PREFIX,Constants.USER_EMAIL_DOMAIN));
+    //recipientSetEmailList.add(ApiUtils.getUserEmail(Constants.USER_EMAIL_PREFIX,Constants.USER_EMAIL_DOMAIN));
+    FileReader fr = new FileReader("mail.txt");
+    
 
+    BufferedReader br = new BufferedReader(fr);
+    try{
+      while (br.ready()) {
+        recipientSetEmailList.add(br.readLine());
+        //System.out.println(br.readLine());
+      }
+      fr.close();
+    }
+    catch(IOException e){
+
+    }
     //Create agreement using the transient document.
     AgreementCreationResponse agreementCreationResponse =  AgreementUtils.createAgreement(recipientSetEmailList,
                                                                                           transientDocumentId,
@@ -79,6 +93,7 @@ public class SendAgreementUsingTransientDocument {
                                                                                           ApiUtils.getAgreementName(Constants.AGREEMENT_NAME));
 
     //Get agreement info using the agreement id.
+    System.out.println(Constants.AGREEMENT_NAME);
     AgreementInfo agreementInfo = AgreementUtils.getAgreementInfo(agreementCreationResponse.getAgreementId());
 
     //Display agreement details

@@ -15,6 +15,8 @@ package com.adobe.sign.utils;
 import java.util.Date;
 import java.util.Properties;
 
+import static java.lang.System.out;
+import java.io.*;
 public class Constants {
   
   private static final String SAMPLE_PREFIX_PATH = ApiUtils.getSampleAbsolutePath();
@@ -78,14 +80,13 @@ public class Constants {
   private static final String RECIPIENT_SET_NAME_KEY = "recipientSetName";
 
   //Common Parameters
-  public static final String ACCESS_TOKEN = "3AAABLblqZhCNsQg4qs_7vE5d3QdK1CWFkykqi3KE6Pg5gDNM_Tw33tECg-rPOWeE_RT6IAr-1Pmdlx7U3eGUk33iOseKv08S";//properties.getProperty(ACCESS_TOKEN_KEY).equals("null") ? null : properties.getProperty(ACCESS_TOKEN_KEY);
+  public static final String ACCESS_TOKEN = "3AAABLblqZhBZYwfU6-hoxojzlBBGUaM_JMRYhMYeBrJtYh5-RvWHGQKV3Z9U0gPfFUNCIW8xaKDoeFdb6AyPy_Yb5wZlVT71";//properties.getProperty(ACCESS_TOKEN_KEY).equals("null") ? null : properties.getProperty(ACCESS_TOKEN_KEY);
   public static final String X_API_USER = properties.getProperty(X_API_USER_KEY).equals("null") ? null : properties.getProperty(X_API_USER_KEY);
   public static final String USER_FIRST_NAME = properties.getProperty(USER_FIRST_NAME_KEY).equals("null") ? null : properties.getProperty(USER_FIRST_NAME_KEY);
   public static final String USER_LAST_NAME = properties.getProperty(USER_LAST_NAME_KEY).equals("null") ? null : properties.getProperty(USER_LAST_NAME_KEY);
   public static final String X_USER_EMAIL = "sam_huang@i-planet.com.tw";//properties.getProperty(X_USER_EMAIL_KEY).equals("null") ? null : properties.getProperty(X_USER_EMAIL_KEY);
   public static final String ALTERNATE_PARTICIPANT_EMAIL = "sam_huang@i-planet.com.tw";//properties.getProperty(ALTERNATE_PARTICIPANT_EMAIL_KEY).equals("null") ? null : properties.getProperty(ALTERNATE_PARTICIPANT_EMAIL_KEY);
   public static final String GROUP_NAME = properties.getProperty(GROUP_NAME_KEY).equals("null") ? null : properties.getProperty(GROUP_NAME_KEY);
-  public static final String AGREEMENT_NAME = "asdfjkasdjfasflsjlkfjsakdfasd";//properties.getProperty(AGREEMENT_NAME_KEY).equals("null") ? null : properties.getProperty(AGREEMENT_NAME_KEY);
   public static final String MEGASIGN_NAME = properties.getProperty(MEGA_SIGN_NAME).equals("null") ? null : properties.getProperty(MEGA_SIGN_NAME);
   public static final String WIDGET_NAME = properties.getProperty(WIDGET_NAME_KEY).equals("null") ? null : properties.getProperty(WIDGET_NAME_KEY);
   public static final String ALTERNATE_PARTICIPANT_MESSAGE = properties.getProperty(ALTERNATE_PARTICIPANT_MESSAGE_KEY).equals("null") ? null : properties.getProperty(ALTERNATE_PARTICIPANT_MESSAGE_KEY);
@@ -93,10 +94,11 @@ public class Constants {
   public static final String EXTERNAL_GROUP = properties.getProperty(EXTERNAL_GROUP_KEY).equals("null") ? null : properties.getProperty(EXTERNAL_GROUP_KEY);
   public static final String EXTERNAL_NAMESPACE = properties.getProperty(EXTERNAL_NAMESPACE_KEY).equals("null") ? null : properties.getProperty(EXTERNAL_NAMESPACE_KEY);
   public static final String QUERY = properties.getProperty(QUERY_KEY).equals("null") ? null : properties.getProperty(QUERY_KEY);
-  public static final String INPUT_FILE_NAME = properties.getProperty(INPUT_FILE_NAME_KEY).equals("null") ? null : properties.getProperty(INPUT_FILE_NAME_KEY);
-  public static final String REQUEST_PATH = properties.getProperty(REQUEST_PATH_KEY).equals("null") ? null : SAMPLE_PREFIX_PATH +  properties.getProperty(REQUEST_PATH_KEY) + FILE_SEP;
+  public static final String INPUT_FILE_NAME = "test.pdf";//properties.getProperty(INPUT_FILE_NAME_KEY).equals("null") ? null : properties.getProperty(INPUT_FILE_NAME_KEY);
+  public static final String AGREEMENT_NAME = INPUT_FILE_NAME;//properties.getProperty(AGREEMENT_NAME_KEY).equals("null") ? null : properties.getProperty(AGREEMENT_NAME_KEY);
+  public static final String REQUEST_PATH = SAMPLE_PREFIX_PATH;//properties.getProperty(REQUEST_PATH_KEY).equals("null") ? null : SAMPLE_PREFIX_PATH +  properties.getProperty(REQUEST_PATH_KEY) + FILE_SEP;
   public static final String OUTPUT_PATH = SAMPLE_PREFIX_PATH + "src/";//(properties.getProperty(OUTPUT_PATH_KEY).equals("null") ? null : properties.getProperty(OUTPUT_PATH_KEY)) + FILE_SEP;
-  public static final String AGREEMENT_DOCUMENT = "abc";//properties.getProperty(AGREEMENT_DOCUMENT_KEY).equals("null") ? null : properties.getProperty(AGREEMENT_DOCUMENT_KEY) + FILE_SEP;
+  public static final String AGREEMENT_DOCUMENT = properties.getProperty(AGREEMENT_DOCUMENT_KEY).equals("null") ? null : properties.getProperty(AGREEMENT_DOCUMENT_KEY) + FILE_SEP;
   public static final String ARCHIVE = properties.getProperty(ARCHIVE_KEY).equals("null") ? null : properties.getProperty(ARCHIVE_KEY) + FILE_SEP;
   public static final String AUDIT_TRAIL = properties.getProperty(AUDIT_TRAIL_KEY).equals("null") ? null : properties.getProperty(AUDIT_TRAIL_KEY) + FILE_SEP;
   public static final String FORM_DATA = properties.getProperty(FORM_DATA_KEY).equals("null") ? null : properties.getProperty(FORM_DATA_KEY) + FILE_SEP;
