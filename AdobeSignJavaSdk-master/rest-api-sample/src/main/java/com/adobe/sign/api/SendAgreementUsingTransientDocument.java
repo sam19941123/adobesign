@@ -72,14 +72,49 @@ public class SendAgreementUsingTransientDocument {
     //List containing email ids of recipients.
     List<String> recipientSetEmailList = new ArrayList<String>();
     //recipientSetEmailList.add(ApiUtils.getUserEmail(Constants.USER_EMAIL_PREFIX,Constants.USER_EMAIL_DOMAIN));
-    FileReader fr = new FileReader("mail.txt");
+    FileReader fr = new FileReader("gary/mail3.txt");
     
 
     BufferedReader br = new BufferedReader(fr);
+    //
     try{
       while (br.ready()) {
-        recipientSetEmailList.add(br.readLine());
+        String b;
+        int j = 0;
+        String a = br.readLine();
+
+        if(!a.trim().equals("")){
+          
+            //System.out.println("zzzzzzzzz\n");
+            //if((Character.isLetter(a.charAt(0)))== 0){
+            if(a.charAt(0)!='a'&&a.charAt(0)!='b'&&a.charAt(0)!='c'&&a.charAt(0)!='d'&&a.charAt(0)!='e'&&a.charAt(0)!='f'&&a.charAt(0)!='g'&&a.charAt(0)!='h'&&a.charAt(0)!='i'&&a.charAt(0)!='j'&&a.charAt(0)!='k'&&a.charAt(0)!='l'&&a.charAt(0)!='m'&&a.charAt(0)!='n'&&a.charAt(0)!='o'&&a.charAt(0)!='p'&&a.charAt(0)!='q'&&a.charAt(0)!='r'&&a.charAt(0)!='s'&&a.charAt(0)!='t'&&a.charAt(0)!='u'&&a.charAt(0)!='v'&&a.charAt(0)!='w'&&a.charAt(0)!='x'&&a.charAt(0)!='y'&&a.charAt(0)!='z'&&
+              a.charAt(0)!='A'&&a.charAt(0)!='B'&&a.charAt(0)!='C'&&a.charAt(0)!='D'&&a.charAt(0)!='E'&&a.charAt(0)!='F'&&a.charAt(0)!='G'&&a.charAt(0)!='H'&&a.charAt(0)!='I'&&a.charAt(0)!='J'&&a.charAt(0)!='K'&&a.charAt(0)!='L'&&a.charAt(0)!='M'&&a.charAt(0)!='N'&&a.charAt(0)!='O'&&a.charAt(0)!='P'&&a.charAt(0)!='Q'&&a.charAt(0)!='R'&&a.charAt(0)!='S'&&a.charAt(0)!='T'&&a.charAt(0)!='U'&&a.charAt(0)!='V'&&a.charAt(0)!='W'&&a.charAt(0)!='X'&&a.charAt(0)!='Y'&&a.charAt(0)!='Z'
+              &&a.charAt(0)!='1'&&a.charAt(0)!='2'&&a.charAt(0)!='3'&&a.charAt(0)!='4'&&a.charAt(0)!='5'&&a.charAt(0)!='6'&&a.charAt(0)!='7'&&a.charAt(0)!='8'&&a.charAt(0)!='9'&&a.charAt(0)!='0'){
+              //System.out.println("aaaaaa\n");
+               a = a.substring(1);
+            }
+          
+        for(int i = 0; i < a.length(); i++){
+          
+          //else{
+          if(a.charAt(i)!='@'&& a.charAt(0)!='a'&&a.charAt(0)!='b'&&a.charAt(0)!='c'&&a.charAt(0)!='d'&&a.charAt(0)!='e'&&a.charAt(0)!='f'&&a.charAt(0)!='g'&&a.charAt(0)!='h'&&a.charAt(0)!='i'&&a.charAt(0)!='j'&&a.charAt(0)!='k'&&a.charAt(0)!='l'&&a.charAt(0)!='m'&&a.charAt(0)!='n'&&a.charAt(0)!='o'&&a.charAt(0)!='p'&&a.charAt(0)!='q'&&a.charAt(0)!='r'&&a.charAt(0)!='s'&&a.charAt(0)!='t'&&a.charAt(0)!='u'&&a.charAt(0)!='v'&&a.charAt(0)!='w'&&a.charAt(0)!='x'&&a.charAt(0)!='y'&&a.charAt(0)!='z'&&
+              a.charAt(0)!='A'&&a.charAt(0)!='B'&&a.charAt(0)!='C'&&a.charAt(0)!='D'&&a.charAt(0)!='E'&&a.charAt(0)!='F'&&a.charAt(0)!='G'&&a.charAt(0)!='H'&&a.charAt(0)!='I'&&a.charAt(0)!='J'&&a.charAt(0)!='K'&&a.charAt(0)!='L'&&a.charAt(0)!='M'&&a.charAt(0)!='N'&&a.charAt(0)!='O'&&a.charAt(0)!='P'&&a.charAt(0)!='Q'&&a.charAt(0)!='R'&&a.charAt(0)!='S'&&a.charAt(0)!='T'&&a.charAt(0)!='U'&&a.charAt(0)!='V'&&a.charAt(0)!='W'&&a.charAt(0)!='X'&&a.charAt(0)!='Y'&&a.charAt(0)!='Z'
+              &&a.charAt(0)!='1'&&a.charAt(0)!='2'&&a.charAt(0)!='3'&&a.charAt(0)!='4'&&a.charAt(0)!='5'&&a.charAt(0)!='6'&&a.charAt(0)!='7'&&a.charAt(0)!='8'&&a.charAt(0)!='9'&&a.charAt(0)!='0' &&a.charAt(i)!='.'){
+            a = a.substring(0,i)+a.substring(i+1);
+            
+            //System.out.println(i+"ccc\n");
+            i--;
+            //System.out.println(a+"if\n");//b.charAt(j) = a.charAt(i);
+            //j++;
+          }
+          //} 
+        }
+        //a = a.replace(" ","");
+        //a = a.substring(2);
+        //System.out.println(a+"bbb\n");
+        recipientSetEmailList.add(a);
         //System.out.println(br.readLine());
+        }
       }
       fr.close();
     }

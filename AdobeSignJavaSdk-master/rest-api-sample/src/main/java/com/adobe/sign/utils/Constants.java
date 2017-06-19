@@ -80,7 +80,7 @@ public class Constants {
   private static final String RECIPIENT_SET_NAME_KEY = "recipientSetName";
 
   //Common Parameters
-  public static final String ACCESS_TOKEN = "3AAABLblqZhBZYwfU6-hoxojzlBBGUaM_JMRYhMYeBrJtYh5-RvWHGQKV3Z9U0gPfFUNCIW8xaKDoeFdb6AyPy_Yb5wZlVT71";//properties.getProperty(ACCESS_TOKEN_KEY).equals("null") ? null : properties.getProperty(ACCESS_TOKEN_KEY);
+  public static final String ACCESS_TOKEN = "3AAABLblqZhDcj10iaOJnF4hHiXXHf2GfkPj4SobYk1uSjW7AoXQm1zPm-IYxdCq56_fSUSRYXa_RWRB0zY220fqtl8Ms3CEz";//properties.getProperty(ACCESS_TOKEN_KEY).equals("null") ? null : properties.getProperty(ACCESS_TOKEN_KEY);
   public static final String X_API_USER = properties.getProperty(X_API_USER_KEY).equals("null") ? null : properties.getProperty(X_API_USER_KEY);
   public static final String USER_FIRST_NAME = properties.getProperty(USER_FIRST_NAME_KEY).equals("null") ? null : properties.getProperty(USER_FIRST_NAME_KEY);
   public static final String USER_LAST_NAME = properties.getProperty(USER_LAST_NAME_KEY).equals("null") ? null : properties.getProperty(USER_LAST_NAME_KEY);
